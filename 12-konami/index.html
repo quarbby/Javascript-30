@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Key Detection</title>
+      <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+    </head>
+    <body>
+        <h1>Type WESBOS for some unicorns!</h1>
+        <script>
+            const pressed = [];
+            const secretCode = 'WESBOS';
+            window.addEventListener('keyup', (e) => {
+              pressed.push(e.key);
+              pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+              if (pressed.join('').includes(secretCode)) {
+                console.log('DING DING!');
+                cornify_add();
+              }
+            });
+        </script>
+    </body>
+</html>
